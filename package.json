@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    //win系统的设置
     "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
     "online": "set WEBPACK_ENV=online && webpack -p"
   },
