@@ -2,21 +2,23 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-18 15:37:14
+ * @Last Modified time: 2017-09-20 18:24:50
  */
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 //定义一个HTML文件的设置函数
-var setHtmlConfig = function (name) {
+var setHtmlConfig = function (name, title) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
+    title: title,
     //在html文件中自动引入
     inject: true,
     //对引入的js文件生成一个hash版本号
     hash: true,
+    //引入两个js模块
     chunks: ['common', name],
   }
 }
@@ -28,7 +30,8 @@ var config = {
   entry: {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
-    'login': ['./src/page/login/index.js']
+    'login': ['./src/page/login/index.js'],
+    'result': ['./src/page/result/index.js']
   },
   output: {
     //文件存放的基准地址
@@ -50,10 +53,23 @@ var config = {
         })
       },
       {
-        test: /\.(gif|jpg|png)\??.*$/,
+        test: /\.(gif|jpg|png|svg|ttf|eot|woff)\??.*$/,
         use: 'url-loader?limit=4000&name=resource/[name].[ext]' //设置大小基准和保留文件名和文件类型
+      },
+      {
+        test: /\.string$/,
+        use: 'html-loader'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      node_modules: __dirname + '/node_modules',
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      image: __dirname + '/src/image',
+    }
   },
   plugins: [
     //独立公共模块的处理
@@ -67,8 +83,9 @@ var config = {
     //css文件的单独打包
     new ExtractTextPlugin("css/[name].css"),
 
-    new HtmlWebpackPlugin(setHtmlConfig('index')),
-    new HtmlWebpackPlugin(setHtmlConfig('login'))
+    new HtmlWebpackPlugin(setHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(setHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(setHtmlConfig('result', '操作结果'))
   ]
 };
 

@@ -1,0 +1,26 @@
+.nav-side {
+  float: left;
+  width: 140px;
+  min-height: 100px;
+}
+
+.nav-side .nav-item {
+  line-height: 28px;
+}
+
+.nav-side .nav-item .link {
+  color: #666;
+}
+/* 选中状态 */
+.nav-side .nav-item.active .link {
+  color: #c60023;
+}
+
+/* 右侧内容区 */
+.content.with-nav {
+  float: left;
+  background: #ccc;
+  position: absolute;
+  right: 0;
+  left: 140px;
+}

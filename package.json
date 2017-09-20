@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    //win系统的设置
     "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
     "online": "set WEBPACK_ENV=online && webpack -p"
   },
@@ -29,5 +28,8 @@
     "webpack": "^2.7.0",
     "webpack-dev-server": "^2.8.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
+  }
 }

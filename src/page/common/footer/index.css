@@ -1,0 +1,13 @@
+.links {
+  text-align: center;
+  padding: 10px 0;
+}
+.links a {
+  padding: 0 5px;
+  border-right: 1px solid #666;
+  color: #666;
+}
+p {
+  text-align: center;  
+  color: #666;
+}
