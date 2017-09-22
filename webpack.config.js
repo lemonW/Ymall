@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-20 18:24:50
+ * @Last Modified time: 2017-09-22 19:09:35
  */
 var path = require('path');
 var webpack = require('webpack');
@@ -13,6 +13,7 @@ var setHtmlConfig = function (name, title) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
+    // 操作提示页的标题
     title: title,
     //在html文件中自动引入
     inject: true,
@@ -30,12 +31,14 @@ var config = {
   entry: {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
-    'login': ['./src/page/login/index.js'],
+    'user-login': ['./src/page/user-login/index.js'],
+    'user-register': ['./src/page/user-register/index.js'],
+    'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
     'result': ['./src/page/result/index.js']
   },
   output: {
     //文件存放的基准地址
-    path: path.resolve(__dirname, 'dist'),
+    path: __dirname + '/dist/',
     //文件引入时基准路径
     publicPath: '/dist',
     filename: 'js/[name].js' //[name]为一变量，按入口文件命名, 多类型文件的处理
@@ -84,7 +87,9 @@ var config = {
     new ExtractTextPlugin("css/[name].css"),
 
     new HtmlWebpackPlugin(setHtmlConfig('index', '首页')),
-    new HtmlWebpackPlugin(setHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(setHtmlConfig('user-login', '用户登录')),
+    new HtmlWebpackPlugin(setHtmlConfig('user-register', '用户注册')),
+    new HtmlWebpackPlugin(setHtmlConfig('user-pass-reset', '修改密码')),
     new HtmlWebpackPlugin(setHtmlConfig('result', '操作结果'))
   ]
 };

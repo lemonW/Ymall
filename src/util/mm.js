@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-18 16:08:30 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-20 18:32:16
+ * @Last Modified time: 2017-09-21 19:54:22
  */
 var conf = {
   serverHost: ''
@@ -16,7 +16,7 @@ var _mm = {
     $.ajax({
       type: param.method || 'get',
       url: param.url || '',
-      dataType: param.type || 'jsonp',
+      dataType: param.type || 'json',
       data: param.data || '',
       success: function (res) {
         //请求成功
@@ -78,8 +78,8 @@ var _mm = {
   },
   //进入登录页面
   doLogin: function () {
-    //将当前页面的url编码后传入再跳转
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    //将当前页面的url编码后传入再跳转，以便登录完成后跳回登录前的页面
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   //首页
   goHome: function () {

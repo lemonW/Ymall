@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
-    "online": "set WEBPACK_ENV=online && webpack -p"
+    "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088 --progress",
+    "online": "set WEBPACK_ENV=online && webpack -p --progress"
   },
   "repository": {
     "type": "git",
