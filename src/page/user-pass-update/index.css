@@ -1,0 +1,19 @@
+/*
+* @Author: Rosen
+* @Date:   2017-05-24 11:04:03
+ * @Last Modified by: huJiaFu
+ * @Last Modified time: 2017-09-23 22:12:44
+*/
+.panel-body {
+    padding: 10px;
+}
+
+.form-line {
+    height: 40px;
+    line-height: 40px;
+}
+
+.input {
+    height: 20px;
+    line-height: 20px;
+}

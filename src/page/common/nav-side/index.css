@@ -1,3 +1,4 @@
+
 .nav-side {
   float: left;
   width: 140px;
@@ -20,7 +21,5 @@
 .content.with-nav {
   float: left;
   background: #ccc;
-  position: absolute;
-  right: 0;
-  left: 140px;
+  width: 900px;
 }

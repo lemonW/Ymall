@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-18 23:25:24 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-19 15:25:21
+ * @Last Modified time: 2017-09-23 22:06:04
  */
 
 
@@ -45,6 +45,18 @@ input[type='checkbox'] {
     overflow: hidden;
 }
 
+.panel {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title {
+    padding: 10px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 700;
+    border-bottom: 2px solid #ccc;
+}
 
 /* 全局样式 */
 
@@ -101,3 +113,12 @@ input[type='checkbox'] {
   border: 1px solid #bbb;
   border-radius: 10px;
 }
+/* 面包屑 */
+.crumb {
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-top: 2px solid #c60023;
+  }

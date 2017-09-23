@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-18 16:08:30 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-21 19:54:22
+ * @Last Modified time: 2017-09-23 21:00:05
  */
 var conf = {
   serverHost: ''
@@ -70,10 +70,10 @@ var _mm = {
       return !!value;
     }
     if (type === 'phone') {
-      return /^(13[0-9]|14[57]|15[0-9]|18[0-9])\d{8}$/.test(value);
+      return /^\d{11}$/.test(value);
     }
     if (type === 'email') {
-      return /^\w+([+-.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.tet(value);
+      return /^\w+([+-.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
     }
   },
   //进入登录页面

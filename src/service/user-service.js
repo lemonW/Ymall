@@ -66,9 +66,38 @@ var _user = {
     })
   },
   //重置密码
-  resetPassword: function (resolve, reject) {
+  resetPassword: function (userInfo, resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('/user/forget_reset_password.do'),
+      data: userInfo,
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //获取用户信息
+  getUserInfo: function (resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/get_information.do'),
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //更新个人信息
+  updateUserInfo: function (userInfo, resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/update_information.do'),
+      data: userInfo,
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //在个人中心修改密码
+  updatePassword: function (userInfo, resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/reset_password.do'),
       data: userInfo,
       method: 'post',
       success: resolve,

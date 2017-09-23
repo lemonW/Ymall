@@ -1,0 +1,19 @@
+/*
+ * @Author: huJiaFu 
+ * @Date: 2017-09-15 16:37:36 
+ * @Last Modified by: huJiaFu
+ * @Last Modified time: 2017-09-23 22:05:51
+ */
+ .page-wrap {
+   min-height: 260px;
+ }
+
+.panel-body {
+  min-height: 250px;
+  padding: 10px;
+}
+
+.form-line {
+  height: 30px;
+  line-height: 30px;
+}
