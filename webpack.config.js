@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-22 19:09:35
+ * @Last Modified time: 2017-09-23 14:50:00
  */
 var path = require('path');
 var webpack = require('webpack');
@@ -89,7 +89,7 @@ var config = {
     new HtmlWebpackPlugin(setHtmlConfig('index', '首页')),
     new HtmlWebpackPlugin(setHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(setHtmlConfig('user-register', '用户注册')),
-    new HtmlWebpackPlugin(setHtmlConfig('user-pass-reset', '修改密码')),
+    new HtmlWebpackPlugin(setHtmlConfig('user-pass-reset', '找回密码')),
     new HtmlWebpackPlugin(setHtmlConfig('result', '操作结果'))
   ]
 };

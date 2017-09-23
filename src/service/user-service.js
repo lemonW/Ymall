@@ -11,6 +11,7 @@ var _user = {
       error: reject
     })
   },
+  // 检查用户名是否冲突
   checkUsername: function (username, resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('/user/check_valid.do'),
@@ -23,6 +24,7 @@ var _user = {
       error: reject
     });
   },
+  //注册
   register: function (userInfo, resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('/user/register.do'),
@@ -36,6 +38,38 @@ var _user = {
   checkLogin: function (resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('/user/get_user_info.do'),
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //获取密码提示问题
+  getQuestion: function (resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/forget_get_question.do'),
+      data: {
+        username: 'username'
+      },
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //检查答案
+  checkAnswer: function (resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/forget_check_answer.do'),
+      data: userInfo,
+      method: 'post',
+      success: resolve,
+      error: reject
+    })
+  },
+  //重置密码
+  resetPassword: function (resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/forget_reset_password.do'),
+      data: userInfo,
       method: 'post',
       success: resolve,
       error: reject

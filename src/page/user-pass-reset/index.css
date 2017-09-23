@@ -65,3 +65,7 @@
 .user-con .link-item {
   text-align: right;
 }
+
+.step-con {
+  display: none;
+}

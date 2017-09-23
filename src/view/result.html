@@ -5,26 +5,36 @@
   <!-- ejs模板语法 -->
   <%= require('html-loader!./layout/common-head.html') %>
     <!-- 在htmlWebpackPlugin的配置中定义一个title -->
-    <title><%= htmlWebpackPlugin.options.title %>， happymmall电商平台</title>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>， happymmall电商平台</title>
 </head>
 
 <body>
   <%= require('html-loader!./layout/nav-simple.html') %>
-  <div class="page-wrap w">
-    <div class="result-con register-success">
-      <h2 class="resule-title">注册成功</h2>
-      <div class="result-content">
-        <a href="./index.html" class="link">回到首页</a>
+    <div class="page-wrap w">
+      <div class="result-con register-success">
+        <h2 class="resule-title">注册成功</h2>
+        <div class="result-content">
+          <a href="./user-login.html" class="link">立即登录</a>
+        </div>
       </div>
-    </div>
-    <div class="result-con default-success">
+
+      <div class="result-con password-reset-success">
+        <h2 class="resule-title">密码重置成功</h2>
+        <div class="result-content">
+          <a href="./user-login.html" class="link">立即登录</a>
+        </div>
+      </div>
+
+      <div class="result-con default-success">
         <h2 class="resule-title">操作成功</h2>
         <div class="result-content">
           <a href="./index.html" class="link">回到首页</a>
         </div>
       </div>
-  </div>
-  <%= require('html-loader!./layout/footer.html') %>
+
+    </div>
+    <%= require('html-loader!./layout/footer.html') %>
 </body>
 
 </html>
