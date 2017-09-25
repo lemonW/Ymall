@@ -4,12 +4,13 @@ var _mm = require('util/mm.js');
 var header = {
   init: function () {
     this.bindEvent();
+    this.onLoad();
   },
   //搜索后框内的显示
   onLoad: function () {
     var keyword = _mm.getUrlParam('keyword');
     if (keyword) {
-      $('#search-btn').val(keyword);
+      $('#search-input').val(keyword);
     };
   },
   bindEvent: function () {
