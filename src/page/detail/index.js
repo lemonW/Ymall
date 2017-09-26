@@ -1,9 +1,4 @@
-/*
- * @Author: huJiaFu 
- * @Date: 2017-09-26 16:43:53 
- * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-26 20:38:16
- */
+
 
 'use strict';
 require('./index.css');
@@ -71,7 +66,7 @@ var page = {
     // 请求detail信息
     _product.getProductDetail(this.data.productId, function (res) {
       _this.filter(res);
-      // 缓存住detail的数据
+      // 缓存住detail的数据 、
       _this.data.detailInfo = res;
       // render
       html = _mm.renderHtml(templateIndex, res);
@@ -80,11 +75,12 @@ var page = {
       $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');
     });
   },
-  // 数据匹配
+  // 数据匹配，拿到缩略图的地址
   filter: function (data) {
     data.subImages = data.subImages.split(',');
   }
 };
+
 $(function () {
   page.init();
 })
