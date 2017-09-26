@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-25 16:38:50
+ * @Last Modified time: 2017-09-26 16:43:21
  */
 var path = require('path');
 var webpack = require('webpack');
@@ -32,6 +32,7 @@ var config = {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
     'list': ['./src/page/list/index.js'],
+    'detail': ['./src/page/detail/index.js'],
     'user-login': ['./src/page/user-login/index.js'],
     'user-register': ['./src/page/user-register/index.js'],
     'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
@@ -92,6 +93,7 @@ var config = {
 
     new HtmlWebpackPlugin(setHtmlConfig('index', '首页')),
     new HtmlWebpackPlugin(setHtmlConfig('list', '商品列表')),
+    new HtmlWebpackPlugin(setHtmlConfig('detail', '商品详情')),
     new HtmlWebpackPlugin(setHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(setHtmlConfig('user-center', '个人中心')),
     new HtmlWebpackPlugin(setHtmlConfig('user-center-update', '修改个人信息')),

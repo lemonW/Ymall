@@ -2,7 +2,7 @@
  * @Author: Rosen
  * @Date:   2017-05-28 11:58:08
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-25 17:33:19
+ * @Last Modified time: 2017-09-25 19:26:35
  */
 
 'use strict';
@@ -29,9 +29,10 @@ var Pagination = function () {
             _this.option.onSelectPage($this.data('value')) : null;
     });
 };
-// 渲染分页组件
+
+// 渲染分页组件，原型继承
 Pagination.prototype.render = function (userOption) {
-    // 合并选项
+    // 合并选项,第一个参数为空对象时就不会改变合并前的对象
     this.option = $.extend({}, this.defaultOption, userOption);
     // 判断容器是否为合法的jquery对象
     if (!(this.option.container instanceof jQuery)) {
@@ -44,6 +45,7 @@ Pagination.prototype.render = function (userOption) {
     // 渲染分页内容
     this.option.container.html(this.getPaginationHtml());
 };
+
 // 获取分页的html, |上一页| 2 3 4 =5= 6 7 8|下一页|  5/9
 Pagination.prototype.getPaginationHtml = function () {
     var html = '',

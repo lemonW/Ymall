@@ -2,7 +2,7 @@
  * @Author: mmall
  * @Date:   2017-05-27 17:57:49
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-25 17:32:01
+ * @Last Modified time: 2017-09-25 21:12:28
  */
 
 'use strict';
@@ -21,7 +21,8 @@ var page = {
             categoryId: _mm.getUrlParam('categoryId') || '',
             orderBy: _mm.getUrlParam('orderBy') || 'default',
             pageNum: _mm.getUrlParam('pageNum') || 1,
-            pageSize: _mm.getUrlParam('pageSize') || 20
+            //数据不多，设为2查看分页效果
+            pageSize: _mm.getUrlParam('pageSize') || 2
         }
     },
     init: function () {
@@ -110,6 +111,7 @@ var page = {
             onSelectPage: function (pageNum) {
                 _this.data.listParam.pageNum = pageNum;
                 _this.loadList();
+                console.log(233)
             }
         }));
     }
