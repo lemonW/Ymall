@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-27 15:59:42
+ * @Last Modified time: 2017-09-27 20:15:23
  */
 var path = require('path');
 var webpack = require('webpack');
@@ -29,21 +29,22 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 var config = {
   entry: {
-    'common'            : ['./src/page/common/index.js'],
-    'index'             : ['./src/page/index/index.js'],
-    'list'              : ['./src/page/list/index.js'],
-    'detail'            : ['./src/page/detail/index.js'],
-    'cart'              : ['./src/page/cart/index.js'],
-    'order-confirm'     : ['./src/page/order-confirm/index.js'],
-    'order-list'        : ['./src/page/order-list/index.js'],
-    'order-detail'        : ['./src/page/order-detail/index.js'],
-    'user-login'        : ['./src/page/user-login/index.js'],
-    'user-register'     : ['./src/page/user-register/index.js'],
-    'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
-    'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
-    'user-center'       : ['./src/page/user-center/index.js'],
+    'common': ['./src/page/common/index.js'],
+    'index': ['./src/page/index/index.js'],
+    'list': ['./src/page/list/index.js'],
+    'detail': ['./src/page/detail/index.js'],
+    'cart': ['./src/page/cart/index.js'],
+    'order-confirm': ['./src/page/order-confirm/index.js'],
+    'order-list': ['./src/page/order-list/index.js'],
+    'order-detail': ['./src/page/order-detail/index.js'],
+    'payment': ['./src/page/payment/index.js'],
+    'user-login': ['./src/page/user-login/index.js'],
+    'user-register': ['./src/page/user-register/index.js'],
+    'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
+    'user-pass-update': ['./src/page/user-pass-update/index.js'],
+    'user-center': ['./src/page/user-center/index.js'],
     'user-center-update': ['./src/page/user-center-update/index.js'],
-    'result'            : ['./src/page/result/index.js']
+    'result': ['./src/page/result/index.js']
   },
   output: {
     //文件存放的基准地址
@@ -102,6 +103,7 @@ var config = {
     new HtmlWebpackPlugin(setHtmlConfig('order-confirm', '订单确认')),
     new HtmlWebpackPlugin(setHtmlConfig('order-list', '订单列表')),
     new HtmlWebpackPlugin(setHtmlConfig('order-detail', '订单详情')),
+    new HtmlWebpackPlugin(setHtmlConfig('payment', '订单付款')),
     new HtmlWebpackPlugin(setHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(setHtmlConfig('user-center', '个人中心')),
     new HtmlWebpackPlugin(setHtmlConfig('user-center-update', '修改个人信息')),
