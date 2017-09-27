@@ -2,7 +2,7 @@
  * @Author: huJiaFu 
  * @Date: 2017-09-14 21:29:14 
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-27 20:15:23
+ * @Last Modified time: 2017-09-27 21:36:16
  */
 var path = require('path');
 var webpack = require('webpack');
@@ -13,6 +13,7 @@ var setHtmlConfig = function (name, title) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
+    favicon: './favicon.ico',
     // 操作提示页的标题
     title: title,
     //在html文件中自动引入
@@ -21,6 +22,13 @@ var setHtmlConfig = function (name, title) {
     hash: true,
     //引入两个js模块
     chunks: ['common', name],
+    minify: {
+      removeComments: true, //去除注释
+      collapseWhitespace: true, //去除空格
+      removeAttributeQuotes: false //不去除双引号
+      // more options:
+      // https://github.com/kangax/html-minifier#options-quick-reference
+    }
   }
 }
 
@@ -50,7 +58,7 @@ var config = {
     //文件存放的基准地址
     path: __dirname + '/dist/',
     //文件引入时基准路径
-    publicPath: '/dist',
+    publicPath: WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
     filename: 'js/[name].js' //[name]为一变量，按入口文件命名, 多类型文件的处理
   },
   //外部文件的模块化引入
