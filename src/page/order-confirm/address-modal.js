@@ -53,7 +53,7 @@ var addressModal = {
         _mm.errorTips(receiverInfo.errMsg || '好像哪里不对了~');
       }
     });
-    // 保证点击modal内容区的时候，不关闭弹窗
+    // 保证点击modal内容区的时候，不关闭弹窗，阻止事件冒泡
     this.$modalWrap.find('.modal-container').click(function (e) {
       e.stopPropagation();
     });
