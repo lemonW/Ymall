@@ -2,7 +2,7 @@
  * @Author: mmall
  * @Date:   2017-05-27 17:57:49
  * @Last Modified by: huJiaFu
- * @Last Modified time: 2017-09-25 21:12:28
+ * @Last Modified time: 2017-10-18 09:42:09
  */
 
 'use strict';
@@ -111,7 +111,6 @@ var page = {
             onSelectPage: function (pageNum) {
                 _this.data.listParam.pageNum = pageNum;
                 _this.loadList();
-                console.log(233)
             }
         }));
     }

@@ -84,6 +84,7 @@ var addressModal = {
   },
   // 加载城市信息
   loadCities: function (provinceName) {
+    
     var cities = _cities.getCities(provinceName) || [],
       $citySelect = this.$modalWrap.find('#receiver-city');
     $citySelect.html(this.getSelectOption(cities));

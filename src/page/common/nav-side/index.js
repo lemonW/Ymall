@@ -6,12 +6,27 @@ var templateIndex = require('./index.string');
 var nav_side = {
   option: {
     name: '',
-    navList : [
-      {name: 'user-center', desc: '个人中心', href: './user-center.html'},
-      {name: 'order-list', desc: '我的订单', href: './order-list.html'},
-      {name: 'pass-update', desc: '修改密码', href: './user-pass-update.html'},
-      {name: 'about', desc: '关于MMALL', href: './about.html'}
-    ]    
+    navList: [{
+        name: 'user-center',
+        desc: '个人中心',
+        href: './user-center.html'
+      },
+      {
+        name: 'order-list',
+        desc: '我的订单',
+        href: './order-list.html'
+      },
+      {
+        name: 'pass-update',
+        desc: '修改密码',
+        href: './user-pass-update.html'
+      },
+      {
+        name: 'about',
+        desc: '关于MMALL',
+        href: './about.html'
+      }
+    ]
   },
   init: function (option) {
     //对this.option做合并修改
@@ -21,7 +36,7 @@ var nav_side = {
   //渲染导航菜单
   renderNav: function () {
     //计算active数据
-    for(var i = 0, iLength = this.option.navList.length; i < iLength; i++) {
+    for (var i = 0, iLength = this.option.navList.length; i < iLength; i++) {
       if (this.option.navList[i].name === this.option.name) {
         //这里是为了实现按选中状态渲染内容
         //hogan.js模板语法不支持内部判断，所以先在此处判断
